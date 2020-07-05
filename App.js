@@ -11,20 +11,20 @@ class UI {
     const productList = document.getElementById('product-list')
     const element = document.createElement('div')
     element.innerHTML = `
-        <div class="card text-center mb-4>
-            <div class="card-body">
+        <div class="card text-center mb-4">
+            <div class="card-body p-0">
                 <div class="d-flex justify-content-around">
-                    <section>
+                    <section class="mt-3">
                         <strong>Product Name: </strong><p>${product.name}</p>
                     </section>
-                    <section>
+                    <section class="mt-3">
                         <strong>Product Price: </strong><p>${product.price}</p>                                
                     </section>
-                    <section>                    
+                    <section class="mt-3">                    
                         <strong>Product Year: </strong><p>${product.year}</p>          
                     </section>
                 </div>
-                <a href="#" class="btn btn-danger" name="delete">Delete</a>            
+                <a href="#" class="btn btn-danger d-block" name="delete">Delete</a>            
             </div>            
         </div>
       `
@@ -43,6 +43,7 @@ class UI {
   }
   showMessage(message, cssClass) {
     const div = document.createElement('div')
+    div.id = 'AlertMessage'
     div.className = `alert alert-${cssClass} mt-3`
     div.appendChild(document.createTextNode(message))
     // Showing in DOM
@@ -51,7 +52,7 @@ class UI {
     container.insertBefore(div, app)
     setTimeout(() => {
       document.querySelector('.alert').remove()
-    }, 2000)
+    }, 3000)
   }
 }
 
@@ -62,7 +63,7 @@ document.getElementById('product-form').addEventListener('submit', (e) => {
   const year = document.getElementById('year').value
   const product = new Product(name, price, year)
   const ui = new UI()
- 
+
   ui.addProduct(product)
 
   e.preventDefault()

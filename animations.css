@@ -1,0 +1,39 @@
+#AlertMessage {
+    animation-duration: 5s;
+    animation-name: alert;
+}
+
+@keyframes alert {
+    0% {
+        margin-left: 100%;
+        width: 300%
+    }
+    5% {
+        margin-left: -8%;
+        width: 100%;
+    }
+    8% {
+        margin-left: 6%;
+        width: 100%;
+    }
+    11% {
+        margin-left: -4%;
+        width: 100%;
+    }
+    14% {
+        margin-left: 2%;
+        width: 100%;
+    }
+    17% {
+        margin-left: 0%;
+        width: 100%;
+    }
+    50% {
+        margin-left: 0%;
+        width: 100%;
+    }  
+    80% {
+        margin-left: 200%;
+        width: 300%
+    }
+}
