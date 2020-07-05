@@ -1,0 +1,22 @@
+{
+  "name": "vanilla-products-app",
+  "version": "1.0.0",
+  "description": "An App to add products",
+  "main": "App.js",
+  "scripts": {
+    "deploy": "node deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FAD95/vanilla-products-app.git"
+  },
+  "author": "Fad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FAD95/vanilla-products-app/issues"
+  },
+  "homepage": "https://github.com/FAD95/vanilla-products-app#readme",
+  "dependencies": {
+    "gh-pages": "^3.1.0"
+  }
+}
