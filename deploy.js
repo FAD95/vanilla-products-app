@@ -2,7 +2,7 @@ var ghpages = require('gh-pages')
 var path = require('path')
 
 ghpages.publish(
-  path.join(__dirname, './src'),
+  path.join(__dirname, './dist'),
   {
     repo: 'git@github.com:FAD95/vanilla-products-app.git',
   },

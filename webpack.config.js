@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     chunkFilename: 'js/[id].[chunkHash].js',
-    filename: 'js/[name].js',
+    filename: 'js/[name].[hash].js',
   },
   optimization: {
     minimizer: [new TerserJSPlugin()],
