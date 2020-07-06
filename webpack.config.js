@@ -3,10 +3,11 @@ const TerserJSPlugin = require('terser-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = {
   entry: {
-    app: path.resolve(__dirname, 'src/App.js'),
+    app: path.resolve(__dirname, './src/App.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -35,6 +36,9 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ['**/app.*'],
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.html'),
     }),
@@ -42,8 +46,6 @@ module.exports = {
       filename: 'css/[name].[hash].css',
       chunkFilename: 'css/[id].[hash].css',
     }),
-    new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ['**/app.*'],
-    }),
+    new OptimizeCSSAssetsPlugin({}),
   ],
 }
