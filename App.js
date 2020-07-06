@@ -1,3 +1,5 @@
+import './animations.css'
+import './bootstrap.min.css'
 class Product {
   constructor(name, price, year) {
     this.name = name
